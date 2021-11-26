@@ -16,7 +16,7 @@ class Tienda{
     vector <Producto> carrito;
 
     public:
-    string get_lista_productos(); // el tipo de dato de regreso depende de como leamos los datos
+    vector <string> get_lista_productos(); // el tipo de dato de regreso depende de como leamos los datos
     void agregar_carrito(Producto prod);
     float precio_carrito();
     void recibir_pago(Cliente cliente, float pago);
