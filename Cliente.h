@@ -11,7 +11,10 @@ class Cliente{
     string nombre;
 
     public:
-    void pagar(Tienda tienda, float pago);
+    // cambió de void a float el tipo de retorno
+    float pagar(float pago); // quité el parametro de tienda para que sea mas sencilla la interacción
+    void set_nombre(string nom);
+    string get_nombre();
 };
 
 #endif

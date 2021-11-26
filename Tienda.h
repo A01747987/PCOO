@@ -1,5 +1,6 @@
 #ifndef TIENDA_H_
 #define TIENDA_H_
+
 #include <string>
 #include <vector>
 #include "Producto.h"
@@ -16,9 +17,10 @@ class Tienda{
     vector <Producto> carrito;
 
     public:
-    vector <string> get_lista_productos(); // el tipo de dato de regreso depende de como leamos los datos
+    vector <Producto> get_lista_productos(); 
     void agregar_carrito(Producto prod);
     float precio_carrito();
-    void recibir_pago(Cliente cliente, float pago);
+    float recibir_pago(Cliente cliente, float pago); /* cambia el tipo de retorno a float para ser congruente 
+    con la función pagar de cliente*/
 };
 #endif
