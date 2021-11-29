@@ -8,13 +8,15 @@ using std::string;
 using std::vector;
 
 void Carrito::agregar_producto(Producto prod){
-    productos.push_back(prod)
+    productos.push_back(prod);
 }
+
 float get_total(); // pendiente
 void quitar_producto(Producto prod);// pendiente 
-void set_dueno(Cliente cliente){
-    dueno = cliente;
+
+void Carrito::set_dueno(Cliente cliente){
+    dueno = cliente.get_nombreC();
 }
-string get_dueno(){
+string Carrito::get_dueno(){
     return dueno;
 }

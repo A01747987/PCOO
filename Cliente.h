@@ -6,15 +6,16 @@
 using std::string;
 
 class Cliente{
-    
     private:
     string nombre;
+    float dinero;
 
     public:
-    // cambió de void a float el tipo de retorno
-    float pagar(float pago); // quité el parametro de tienda para que sea mas sencilla la interacción
+    float pagar(float pago); 
     void set_nombre(string nom);
-    string get_nombre();
+    string get_nombreC();
+    void set_dinero(float deposito);
+    float get_dinero();
 };
 
 #endif

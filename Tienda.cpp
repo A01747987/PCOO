@@ -3,6 +3,7 @@
 #include "Cliente.h"
 #include <iostream>
 #include "Tienda.h"
+#include"Carrito.h"
 
 using std::string;
 using std::vector;
@@ -16,11 +17,18 @@ vector <Producto> Tienda:: get_lista_productos(){
 void Tienda::agregar_carrito(Producto prod){
     carrito.push_back(prod);
 }
-float Tienda::precio_carrito(){
-    // queda pendiente hasta que veamos como leer el archivo
+float Tienda::precio_carrito(Carrito carrito){
+    return carrito.get_total();
 }
 float Tienda::recibir_pago(Cliente cliente, float pago){
+    dinero = dinero + cliente.pagar(pago);
     return cliente.pagar(pago);
+}
+void Tienda::set_dinero(float deposito){
+    dinero = deposito;
+}
+float Tienda::get_dinero(){
+    return dinero;
 }
 
 

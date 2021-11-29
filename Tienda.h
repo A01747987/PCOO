@@ -5,6 +5,7 @@
 #include <vector>
 #include "Producto.h"
 #include "Cliente.h"
+#include "Carrito.h"
 
 using std::string;
 using std::vector;
@@ -15,12 +16,14 @@ class Tienda{
     string nombre;
     vector <Producto> lista_productos;
     vector <Producto> carrito;
+    float dinero;
 
     public:
     vector <Producto> get_lista_productos(); 
     void agregar_carrito(Producto prod);
-    float precio_carrito();
-    float recibir_pago(Cliente cliente, float pago); /* cambia el tipo de retorno a float para ser congruente 
-    con la función pagar de cliente*/
+    float precio_carrito(Carrito carrito);
+    float recibir_pago(Cliente cliente, float pago); 
+    void set_dinero(float deposito);
+    float get_dinero();
 };
 #endif
