@@ -1,7 +1,7 @@
 #ifndef CLIENTE_H_
 #define CLIENTE_H_
 #include <string>
-#include "Tienda.h"
+//#include "Tienda.h"
 
 using std::string;
 

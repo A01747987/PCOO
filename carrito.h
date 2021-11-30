@@ -1,9 +1,9 @@
-#ifndef CARRITO_H
-#define CARRITO_H
+#ifndef CARRITO_H_
+#define CARRITO_H_
 #include <vector>
 #include <string>
 #include "Producto.h"
-#include "Cliente.h"
+//#include "Cliente.h"
 
 using std::vector;
 using std::string;
@@ -12,15 +12,19 @@ class Carrito{
 
     private:
     vector <Producto> productos;
-    string dueno;
+    
+    vector <int> cantidades;
 
     public:
+    
     void agregar_producto(Producto prod);
+
     float get_total();
-    void quitar_producto(Producto prod); /*El parametro podria cambiar, porque para quitar un producto que ya
+    void quitar_producto( int j); /*El parametro podria cambiar, porque para quitar un producto que ya
     esta en productos hay que acceder al valor del vector*/
-    void set_dueno(Cliente cliente);
-    string get_dueno();
+    //void set_dueno(Cliente cliente);
+    void get_lista();
+   
 
 };
 

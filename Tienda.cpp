@@ -1,6 +1,6 @@
 #include <vector>
 #include "Producto.h"
-#include "Cliente.h"
+//#include "Cliente.h"
 #include <iostream>
 #include "Tienda.h"
 #include"Carrito.h"
@@ -11,25 +11,21 @@ using std::cout;
 using std::endl;
 using std::cin;
 
-vector <Producto> Tienda:: get_lista_productos(){
-    return lista_productos;
+void  Tienda:: get_lista_productos(){
+    
+    int n = lista_productos.size();
+    for(int i=0; i<n; i++){
+        cout<<i<< lista_productos[i].get_nombre()<< lista_productos[i].get_precio()<< lista_productos[i].get_stockid()<< lista_productos[i].get_stock()<<endl;
+    }
 }
-void Tienda::agregar_carrito(Producto prod){
-    carrito.push_back(prod);
-}
-float Tienda::precio_carrito(Carrito carrito){
+
+float Tienda::cobrar(Carrito carrito){
     return carrito.get_total();
 }
-float Tienda::recibir_pago(Cliente cliente, float pago){
-    dinero = dinero + cliente.pagar(pago);
-    return cliente.pagar(pago);
-}
-void Tienda::set_dinero(float deposito){
-    dinero = deposito;
-}
-float Tienda::get_dinero(){
-    return dinero;
-}
+
+
+
+
 
 
 
