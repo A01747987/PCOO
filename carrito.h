@@ -12,17 +12,13 @@ class Carrito{
 
     private:
     vector <Producto> productos;
-    
     vector <int> cantidades;
 
     public:
     
-    void agregar_producto(Producto prod);
-
+    void agregar_producto(Producto prod, int cantidad); // agregue el parámetro cantidad
     float get_total();
-    void quitar_producto( int j); /*El parametro podria cambiar, porque para quitar un producto que ya
-    esta en productos hay que acceder al valor del vector*/
-    //void set_dueno(Cliente cliente);
+    void quitar_producto(int j);
     void get_lista();
    
 

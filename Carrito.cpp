@@ -10,15 +10,15 @@ using std::vector;
 using std::cout;
 using std::endl;
 
-void Carrito::agregar_producto(Producto prod){
+void Carrito::agregar_producto(Producto prod, int cantidad){
     productos.push_back(prod);
+    cantidades.push_back(cantidad); // agregue esta linea 
 }
 
 float Carrito::get_total(){
     int n = productos.size();
     float suma=0;
-    for(int i=0; i<n; i++){
-        
+    for(int i = 0 ; i < n ; i++ ){
         suma=suma+(productos[i].get_precio()*cantidades[i]);
     }
 
@@ -27,14 +27,14 @@ float Carrito::get_total(){
 
 void Carrito::get_lista(){
     int n = productos.size();
-    for(int i=0; i<n; i++){
-        
-        cout<<i<< productos[i].get_nombre()<< productos[i].get_precio()<< productos[i].get_stockid()<< productos[i].get_stock()<<endl;
+    cout <<"# , nombre , Q , precio , ID , stock" << endl;
+    for(int i = 0; i < n; i++ ){    
+        cout<<i+1<<" , "<<productos[i].get_nombre() <<" , "<<cantidades[i]<<" , "
+        << productos[i].get_precio()<<" , "<< productos[i].get_stockid()<<" , "
+        << productos[i].get_stock()<<endl;
     }
-    
 
 }
 void Carrito::quitar_producto(int j){
-     cantidades[j]=cantidades[j]-1;
+    cantidades[j] = cantidades[j] - 1;
 } 
-

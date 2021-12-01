@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <fstream>
 #include "Producto.h"
 #include "Tienda.h"
 #include "Carrito.h"
@@ -11,40 +12,31 @@ using std::cin;
 using std::endl;
 using std::vector;
 using std::string;
+using std::ifstream;
 
 int main(){
+    ifstream archivo;
+    /*
     // PRUEBAS DE CLASES
     Carrito carrito_prueba;
-    //Cliente cliente_prueba;
     Tienda tienda_prueba;
-    string nom = "nombre";
-    float valor = 50.5;
-    string id = "ID102"; 
-    int stock = 10;
-    
-    Producto prueba( nom,  valor,  id,  stock);
+    Producto prueba( "nombre",  50.5,  "ID102",  10);
+    //prueba producto
+    cout<<"Pruebas Producto: \n"<<endl;
     cout<<prueba.get_nombre()<<endl;
     cout<<prueba.get_precio()<<endl;
-
-/*
-    cout << "Pruebas para clase cliente:\n" << endl;
-    cliente_prueba.set_nombre("Carlos");
-    cout << cliente_prueba.get_nombreC() << endl;
-    cliente_prueba.set_dinero(5.5);
-    cout << cliente_prueba.get_dinero() << endl;
-    cout << cliente_prueba.pagar(1.2) << endl;
-    cout << cliente_prueba.get_dinero() << endl;
-
-    cout << "Pruebas para clase carrito:\n" << endl;
-    carrito_prueba.set_dueno(cliente_prueba);
-    cout << carrito_prueba.get_dueno() << endl;
-    // carrito_prueba.agregar_producto(prueba);
-
-    cout << "Pruebas para clase Tienda:\n" << endl;
-    tienda_prueba.set_dinero(1.1);
-    cout << tienda_prueba.recibir_pago(cliente_prueba, 1.1) << endl;
-
-    cout << tienda_prueba.get_dinero() << endl;
-    // pruebas para leer del archivo:
-*/
+    cout<<prueba.get_stockid()<<endl;
+    cout<<prueba.get_stock()<<endl;
+    //prueba carrito
+    cout<<"Pruebas Carrito: \n"<<endl;
+    carrito_prueba.agregar_producto(prueba,2);
+    carrito_prueba.get_lista();
+    cout<<carrito_prueba.get_total()<<endl;
+    carrito_prueba.quitar_producto(0);
+    carrito_prueba.get_lista();
+    //prueba Tienda
+    cout<<"Pruebas Tienda: \n"<<endl;
+    tienda_prueba.agregar_producto(prueba);
+    tienda_prueba.get_lista_productos();
+    cout << tienda_prueba.cobrar(carrito_prueba) << endl;*/
 }
