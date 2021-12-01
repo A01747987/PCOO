@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <fstream>
+#include <sstream>
 #include "Producto.h"
 #include "Tienda.h"
 #include "Carrito.h"
@@ -13,9 +14,40 @@ using std::endl;
 using std::vector;
 using std::string;
 using std::ifstream;
+using std::stringstream;
+using std::stof;
 
 int main(){
+    string path;
+    cout <<"Dirección del archivo de inventario: "<< endl;
+    cin >> path;
     ifstream archivo;
+    //C:\\Users\\diego\\OneDrive\\Documentos\\GitHub\\PCOO\\inventario.csv
+    archivo.open(path);
+
+    string linea;
+    string id;
+    string nombre;
+    string precio;
+    string stock;
+    float conversionf;
+    int conversioni;
+
+    Tienda tienda;
+    while(getline(archivo,linea)){
+        stringstream separador(linea);
+        getline(separador,id, ',');
+        getline(separador,nombre, ',');
+        getline(separador,precio, ',');
+        getline(separador,stock, ',');
+        conversionf = stof(precio);
+        conversioni = stoi(stock);
+        Producto producto(nombre, conversionf, id, conversioni);
+        tienda.agregar_producto(producto);
+    }
+    tienda.get_lista_productos();
+    archivo.close();
+    return 0;
     /*
     // PRUEBAS DE CLASES
     Carrito carrito_prueba;
