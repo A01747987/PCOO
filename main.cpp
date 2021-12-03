@@ -17,6 +17,15 @@ using std::ifstream;
 using std::stringstream;
 using std::stof;
 
+void mostrar_productos(){
+
+cout<< " 1.Agua Embotellada" <<endl;
+cout<<"2. Bote de Palomitas"  <<endl;
+cout<< "3. ICE de cereza" <<endl;
+
+}
+
+
 int main(){
     string path;
     cout <<"Dirección del archivo de inventario: "<< endl;
@@ -24,6 +33,8 @@ int main(){
     ifstream archivo;
     //C:\\Users\\diego\\OneDrive\\Documentos\\GitHub\\PCOO\\inventario.csv
     archivo.open(path);
+   
+
 
     string linea;
     string id;
@@ -32,6 +43,9 @@ int main(){
     string stock;
     float conversionf;
     int conversioni;
+    int e=0;
+
+    
 
     Tienda tienda;
     while(getline(archivo,linea)){
@@ -45,8 +59,28 @@ int main(){
         Producto producto(nombre, conversionf, id, conversioni);
         tienda.agregar_producto(producto);
     }
+    
+
+    tienda.get_lista_productos();
+    cout<<"elige los productos "<<endl;
+    cin>>e;
+    while(e!=1 &e!=2 &e!=3 &e!=4){
+        cout<<"Recuerda que debes elegir un número entre uno y cuatro, intenta de nuevo " <<endl;
+        tienda.get_lista_productos();
+        cin>>e;
+    }
+
+
+    /*if(e==1){
+        tienda.agregar_producto(producto);
+
+    }
     tienda.get_lista_productos();
     archivo.close();
+
+
+    */
+    
     return 0;
     /*
     // PRUEBAS DE CLASES
