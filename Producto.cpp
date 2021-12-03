@@ -5,6 +5,8 @@ using std:: string ;
 using std:: cout;
 using std:: endl;
 
+Producto::Producto(){}
+
 Producto::Producto(string nom, float valor, string id, int cantidad){ // agregue la declaración del constructor
     nombre = nom;
     precio = valor;

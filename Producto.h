@@ -13,6 +13,7 @@ class Producto{
     int stock;
 
     public:
+    Producto();
     Producto(string nom, float valor, string id, int cantidad); // constructor 
     string get_nombre();
     float get_precio();

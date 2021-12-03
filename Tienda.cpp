@@ -12,6 +12,7 @@ using std::endl;
 using std::cin;
 
 void  Tienda:: get_lista_productos(){
+    cout <<"Productos disponibles: " << endl;
     cout <<"# , nombre , Q , precio , ID , stock" << endl;
     int n = lista_productos.size();
     for(int i=0; i<n; i++){
@@ -19,6 +20,7 @@ void  Tienda:: get_lista_productos(){
         << lista_productos[i].get_precio()<<" , "<< lista_productos[i].get_stockid()<<" , "
         << lista_productos[i].get_stock()<<endl;
     }
+    cout <<""<< endl;
 }
 
 float Tienda::cobrar(Carrito carrito){
@@ -27,9 +29,11 @@ float Tienda::cobrar(Carrito carrito){
 void Tienda::agregar_producto(Producto prod){
     lista_productos.push_back(prod);
 }
-
-
-
-
-
-
+Producto Tienda::get_producto(int i){
+    if (i<= lista_productos.size()){
+    return lista_productos[i];
+    }
+    else {
+        return no_valido;
+    }
+}

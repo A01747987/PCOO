@@ -14,11 +14,12 @@ class Tienda{
     private:
     string nombre;
     vector <Producto> lista_productos;
+    Producto no_valido;
     
     public:
     void get_lista_productos(); 
     float cobrar(Carrito carrito);
     void agregar_producto(Producto prod);
-    
+    Producto get_producto(int i);
 };
 #endif

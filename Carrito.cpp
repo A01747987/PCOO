@@ -11,8 +11,13 @@ using std::cout;
 using std::endl;
 
 void Carrito::agregar_producto(Producto prod, int cantidad){
-    productos.push_back(prod);
-    cantidades.push_back(cantidad); // agregue esta linea 
+    if (prod.get_nombre() != ""){
+        productos.push_back(prod);
+        cantidades.push_back(cantidad); // agregue esta linea 
+    }
+    else{
+        cout <<"El producto no existe" << endl;
+    }
 }
 
 float Carrito::get_total(){
@@ -27,6 +32,8 @@ float Carrito::get_total(){
 
 void Carrito::get_lista(){
     int n = productos.size();
+    cout << "" << endl;
+    cout << "Lista de productos del carrito: " << endl;
     cout <<"# , nombre , Q , precio , ID , stock" << endl;
     for(int i = 0; i < n; i++ ){    
         cout<<i+1<<" , "<<productos[i].get_nombre() <<" , "<<cantidades[i]<<" , "
