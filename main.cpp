@@ -17,12 +17,13 @@ using std::ifstream;
 using std::stringstream;
 using std::stof;
 
+
+
 void mostrar_productos(){
-
-cout<< " 1.Agua Embotellada" <<endl;
-cout<<"2. Bote de Palomitas"  <<endl;
-cout<< "3. ICE de cereza" <<endl;
-
+    cout<<"1. Agua embotellada"<<endl;
+    cout<<"2. Bote de Palomitas"<<endl;
+    cout<<"3. Ice de Cereza"<<endl;
+    cout<<"0. Salir "<<endl;
 }
 
 
@@ -32,6 +33,8 @@ int main(){
     cin >> path;
     ifstream archivo;
     //C:\\Users\\diego\\OneDrive\\Documentos\\GitHub\\PCOO\\inventario.csv
+
+    //C:\\Users\\eduar\\OneDrive\\Documentos\\GitHub\\PCOO\\inventario.csv
     archivo.open(path);
    
 
@@ -62,14 +65,33 @@ int main(){
     
 
     tienda.get_lista_productos();
-    cout<<"elige los productos "<<endl;
-    cin>>e;
-    while(e!=1 &e!=2 &e!=3 &e!=4){
-        cout<<"Recuerda que debes elegir un número entre uno y cuatro, intenta de nuevo " <<endl;
+    // menú: 
+    
+    int i;
+    cin >> i;
+    while(i!=1& i!=2 &i!=3 &i!=4 &i!=5 &i!=0){
+        cout<<"Recuerda que debes elegir una opción que se encuentre en el menú "<<endl;
+        cout<<"Intenta de nuevo"<<endl;
         tienda.get_lista_productos();
-        cin>>e;
-    }
+        mostrar_productos();
+        cin>>i;
 
+        
+        } 
+
+    while(i!=0){
+
+        Carrito carrito;
+        tienda.get_lista_productos();
+        //carrito.agregar_producto(tienda.get_producto(i-1), 1);
+        carrito.get_lista();
+        cin>>i;
+
+
+    }
+        
+    
+    
 
     /*if(e==1){
         tienda.agregar_producto(producto);

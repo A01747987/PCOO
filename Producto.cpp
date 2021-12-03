@@ -23,3 +23,4 @@ string Producto::get_stockid(){
 int Producto::get_stock(){
     return stock;
 }
+
