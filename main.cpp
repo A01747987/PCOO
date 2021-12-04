@@ -37,7 +37,7 @@ int main(){
     ifstream archivo;
     //C:\\Users\\diego\\OneDrive\\Documentos\\GitHub\\PCOO\\inventario.csv
     //C:\\Users\\eduar\\OneDrive\\Documentos\\GitHub\\PCOO\\inventario.csv
-    archivo.open("C:\\Users\\diego\\OneDrive\\Documentos\\GitHub\\PCOO\\inventario.csv");
+    archivo.open("C:\\Users\\eduar\\OneDrive\\Documentos\\GitHub\\PCOO\\inventario.csv");
    //Creación de variables y objetos:
 
     string linea;
