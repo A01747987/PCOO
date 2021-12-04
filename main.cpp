@@ -37,7 +37,7 @@ int main(){
     ifstream archivo;
     //C:\\Users\\diego\\OneDrive\\Documentos\\GitHub\\PCOO\\inventario.csv
     //C:\\Users\\eduar\\OneDrive\\Documentos\\GitHub\\PCOO\\inventario.csv
-    archivo.open("C:\\Users\\eduar\\OneDrive\\Documentos\\GitHub\\PCOO\\inventario.csv");
+    archivo.open("C:\\Users\\diego\\OneDrive\\Documentos\\GitHub\\PCOO\\inventario.csv");
    //Creación de variables y objetos:
 
     string linea;
@@ -45,6 +45,7 @@ int main(){
     string nombre;
     string precio;
     string stock;
+    string pausa;
     float conversionf;
     int conversioni;
     Tienda tienda;
@@ -75,6 +76,8 @@ int main(){
             cout << "Elige la cantidad de producto que quieres agregar" << endl;
             cin >> cant;
             carrito.agregar_producto(tienda.get_producto(prod-1), cant);
+            cout << "escriba lo que sea para continuar" << endl;
+            cin >> pausa;
             mostrar_menu(tienda);
             cin >> i;
         }
@@ -85,16 +88,22 @@ int main(){
             cout << "(el número que corresponde a la lista del carrito)" << endl;
             cin >> prod;
             carrito.quitar_producto(prod-1);
+            cout << "escriba lo que sea para continuar" << endl;
+            cin >> pausa;
             mostrar_menu(tienda);
             cin >> i;
         }
         else if (i == "3"){
             carrito.get_lista();
+            cout << "escriba lo que sea para continuar" << endl;
+            cin >> pausa;
             mostrar_menu(tienda);
             cin >> i;
         }
         else if (i == "4"){
             cout << "El precio del carrito hasta el momento es de: $"<<carrito.get_total() << endl;
+            cout << "escriba lo que sea para continuar" << endl;
+            cin >> pausa;
             mostrar_menu(tienda);
             cin >> i;
         }
@@ -104,6 +113,8 @@ int main(){
         }
         else{
             cout << "La opción elegida no es valida o no existe" << endl;
+            cout << "escriba lo que sea para continuar" << endl;
+            cin >> pausa;
             mostrar_menu(tienda);
             cin >> i;
         }
